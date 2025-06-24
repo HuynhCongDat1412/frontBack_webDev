@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Chat Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f8fa;
+            margin: 40px;
+        }
+        #received {
+            width: 50%;
+            height: 150px;
+            background: #eaf1fb;
+            border: 1.5px solid #3498db;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #34495e;
+            resize: none;
+            box-sizing: border-box;
+        }
+        #message {
+            width: 50%;
+            height: 60px;
+            background: #fff;
+            border: 1.5px solid #95a5a6;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 15px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            resize: none;
+            box-sizing: border-box;
+        }
+        #loginForm {
+            width: 300px;
+            margin: 100px auto;
+            background: #fff;
+            border: 1.5px solid #95a5a6;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+        #chatContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginForm">
+        <h3>Đăng nhập</h3>
+        <input type="text" id="username" placeholder="Username" style="width:100%;margin-bottom:10px;"><br>
+        <input type="password" id="password" placeholder="Password" style="width:100%;margin-bottom:10px;"><br>
+        <button onclick="login()">Đăng nhập</button>
+        <div id="loginError" style="color:red;margin-top:10px;"></div>
+    </div>
+
+    <div id="chatContainer">
+        <h2>WebSocket Chat</h2>
+        <label for="received">Received Messages:</label>
+        <textarea id="received" readonly></textarea>
+        <br>
+        <label for="message">Your Message:</label>
+        <textarea id="message" placeholder="Type your message here..."></textarea>
+        <br>
+        <div style="display: inline-block; border: 2px;">
+            <input type="button" id="sendBtn" onclick="sendMsg()" value="Send">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
