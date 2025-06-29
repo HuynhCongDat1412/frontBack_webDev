@@ -46,7 +46,7 @@ gcc websocketTest.c lib/mongoose.c -Ilib -o ws_server.exe -lws2_32
 
 **Lệnh biên dịch MQTT client:**
 ```sh
-gcc mqttTest.c lib/mqtt.c -Ilib -o mqtt_client.exe -lws2_32
+gcc mqttTest.c lib/mqtt.c lib/mqtt_pal.c -Ilib -o mqtt_client.exe -lws2_32
 ```
 
 ---
